@@ -56,7 +56,7 @@
         android:ems="10"
         android:fontFamily="@font/inter"
         android:hint="@string/username_hint"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/passwordH2"
         app:layout_constraintEnd_toStartOf="@+id/titleGuidelineV2"
         app:layout_constraintStart_toStartOf="@+id/titleGuidelineV1"
@@ -87,7 +87,7 @@
         android:fontFamily="@font/inter"
         android:hint="@string/surname_hint"
         android:importantForAutofill="no"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/titleGuidelineV2"
         app:layout_constraintStart_toStartOf="@+id/titleGuidelineV1"
@@ -109,7 +109,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/signUpBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="#FFBF22"

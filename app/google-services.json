@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "762843907622",
+    "project_id": "teachnet-asanme",
+    "storage_bucket": "teachnet-asanme.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762843907622:android:2b255f6a7008fbb52388e7",
+        "android_client_info": {
+          "package_name": "com.asanme.teachnet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762843907622-tct58fh8gsa3lbir1ht8gse6sdr1r9h1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiPc3_R8rL0EGN4gCi4YxIObw0HRMPLUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762843907622-tct58fh8gsa3lbir1ht8gse6sdr1r9h1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
