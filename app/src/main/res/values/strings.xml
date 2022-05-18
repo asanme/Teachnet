@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Teachnet</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="no_account">Don’t have an account?</string>
+    <string name="email_username_input">Email or username</string>
+    <string name="login_btn">Login</string>
+    <string name="login_title">Log In to continue</string>
+    <string name="welcome_title">Welcome back!</string>
+    <string name="password_hint">Password</string>
+    <string name="logo_description">teachnet_logo</string>
 </resources>
