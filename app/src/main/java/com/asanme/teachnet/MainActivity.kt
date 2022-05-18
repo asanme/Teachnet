@@ -6,7 +6,7 @@ import android.os.Bundle
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login_screen)
+        setContentView(R.layout.signup_screen)
         super.getActionBar()?.hide()
 
     }

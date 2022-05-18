@@ -9,4 +9,13 @@
     <string name="welcome_title">Welcome back!</string>
     <string name="password_hint">Password</string>
     <string name="logo_description">teachnet_logo</string>
+    <string name="welcome_signup_title">Welcome to Teachnet!</string>
+    <string name="get_started_title">Sign Up to get started</string>
+    <string name="email_hint">Email</string>
+    <string name="username_hint">Username</string>
+    <string name="name_hint">Name</string>
+    <string name="surname_hint">Surname</string>
+    <string name="sign_up_btn">Sign Up</string>
+    <string name="account_text">Already have an account?</string>
+    <string name="sign_in_text_btn">Sign In</string>
 </resources>
