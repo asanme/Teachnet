@@ -3,6 +3,7 @@ package com.asanme.teachnet
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.asanme.teachnet.databinding.LoginScreenBinding
 import com.asanme.teachnet.databinding.SignupScreenBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -21,6 +22,20 @@ class LoginScreenActivity : AppCompatActivity() {
         binding.signUpTextBtn.setOnClickListener{
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.signInBtn.setOnClickListener{
+            val email = binding.emailInput.text.toString()
+            val pswd = binding.passwordInput.text.toString()
+            if(email.isNotEmpty() && pswd.isNotEmpty()){
+                firebaseAuth.signInWithEmailAndPassword(email, pswd).addOnCompleteListener {
+                    if(it.isSuccessful){
+                        Toast.makeText(this, "Logged in successfully", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Failed to log in ${it.exception.toString()}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
         }
     }
 }

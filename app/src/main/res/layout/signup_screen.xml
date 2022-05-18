@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/logo_description"
+        app:layout_constraintBottom_toTopOf="@+id/titleGuidelineH1"
+        app:layout_constraintEnd_toStartOf="@+id/titleGuidelineV2"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/titleGuidelineV1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/teachnet_logo" />
 
     <TextView
         android:layout_width="0dp"
@@ -13,6 +25,7 @@
         android:fontFamily="@font/inter"
         android:gravity="center"
         android:text="@string/welcome_signup_title"
+        android:textColor="#D3000000"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/titleGuidelineH2"
@@ -26,6 +39,7 @@
         android:fontFamily="@font/inter"
         android:gravity="center"
         android:text="@string/get_started_title"
+        android:textColor="#B5000000"
         android:textSize="20dp"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/subtitleH2"
@@ -41,12 +55,13 @@
         android:ems="10"
         android:fontFamily="@font/inter"
         android:hint="@string/email_hint"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/usernameH2"
         app:layout_constraintEnd_toStartOf="@+id/titleGuidelineV2"
         app:layout_constraintStart_toStartOf="@+id/titleGuidelineV1"
-        app:layout_constraintTop_toTopOf="@+id/usernameH1"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="@+id/usernameH1" />
 
     <EditText
         android:id="@+id/usernameInput"
@@ -56,12 +71,13 @@
         android:ems="10"
         android:fontFamily="@font/inter"
         android:hint="@string/username_hint"
+        android:importantForAutofill="no"
         android:inputType="text"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/passwordH2"
         app:layout_constraintEnd_toStartOf="@+id/titleGuidelineV2"
         app:layout_constraintStart_toStartOf="@+id/titleGuidelineV1"
-        app:layout_constraintTop_toTopOf="@+id/passwordH1"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="@+id/passwordH1" />
 
     <EditText
         android:id="@+id/nameInput"
@@ -73,6 +89,7 @@
         android:hint="@string/name_hint"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/titleGuidelineV2"
         app:layout_constraintStart_toStartOf="@+id/titleGuidelineV1"
@@ -88,6 +105,7 @@
         android:hint="@string/surname_hint"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/titleGuidelineV2"
         app:layout_constraintStart_toStartOf="@+id/titleGuidelineV1"
@@ -103,6 +121,7 @@
         android:hint="@string/password_hint"
         android:importantForAutofill="no"
         android:inputType="textPassword"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/titleGuidelineV2"
         app:layout_constraintStart_toStartOf="@+id/titleGuidelineV1"
@@ -118,6 +137,7 @@
         android:insetBottom="0dp"
         android:text="@string/sign_up_btn"
         android:textColor="#312300"
+        android:textStyle="bold"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/loginH2"
         app:layout_constraintEnd_toStartOf="@+id/titleGuidelineV2"
@@ -132,6 +152,7 @@
         android:layout_height="0dp"
         android:fontFamily="@font/inter"
         android:text="@string/account_text"
+        android:textColor="#000000"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/signUpH2"
         app:layout_constraintEnd_toStartOf="@+id/signUpTextBtn"
