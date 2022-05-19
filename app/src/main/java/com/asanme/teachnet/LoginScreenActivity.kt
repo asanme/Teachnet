@@ -5,19 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.asanme.teachnet.databinding.LoginScreenBinding
-import com.asanme.teachnet.databinding.SignupScreenBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginScreenActivity : AppCompatActivity() {
     private lateinit var binding: LoginScreenBinding
-    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var connection: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = LoginScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        firebaseAuth = FirebaseAuth.getInstance()
+        connection = FirebaseAuth.getInstance()
 
         binding.signUpTextBtn.setOnClickListener{
             val intent = Intent(this, SignUpActivity::class.java)
@@ -28,7 +27,7 @@ class LoginScreenActivity : AppCompatActivity() {
             val email = binding.emailInput.text.toString()
             val pswd = binding.passwordInput.text.toString()
             if(email.isNotEmpty() && pswd.isNotEmpty()){
-                firebaseAuth.signInWithEmailAndPassword(email, pswd).addOnCompleteListener {
+                connection.signInWithEmailAndPassword(email, pswd).addOnCompleteListener {
                     if(it.isSuccessful){
                         Toast.makeText(this, "Logged in successfully", Toast.LENGTH_SHORT).show()
                     } else {
