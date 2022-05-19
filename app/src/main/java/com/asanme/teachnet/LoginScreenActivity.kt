@@ -30,6 +30,7 @@ class LoginScreenActivity : AppCompatActivity() {
                 connection.signInWithEmailAndPassword(email, pswd).addOnCompleteListener {
                     if(it.isSuccessful){
                         Toast.makeText(this, "Logged in successfully", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, MainActivity::class.java))
                     } else {
                         Toast.makeText(this, "Failed to log in ${it.exception.toString()}", Toast.LENGTH_SHORT).show()
                     }

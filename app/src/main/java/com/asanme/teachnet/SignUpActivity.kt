@@ -53,7 +53,8 @@ class SignUpActivity : AppCompatActivity() {
                             .child(connection.currentUser!!.uid)
                             .setValue(user)
                             .addOnCompleteListener {
-                                if(it.isSuccessful){
+                                if(it.isSuccessful)
+                                {
                                     //startActivity(Intent(this, LoginScreenActivity::class.java))
                                     Log.i("FIREBASE INFO", "Registered sucessfully")
                                     Toast.makeText(this, "User was created successfully!", Toast.LENGTH_SHORT).show()
