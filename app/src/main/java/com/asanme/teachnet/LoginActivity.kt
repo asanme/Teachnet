@@ -7,7 +7,7 @@ import android.widget.Toast
 import com.asanme.teachnet.databinding.LoginScreenBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginScreenActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var binding: LoginScreenBinding
     private lateinit var connection: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +30,7 @@ class LoginScreenActivity : AppCompatActivity() {
                 connection.signInWithEmailAndPassword(email, pswd).addOnCompleteListener {
                     if(it.isSuccessful){
                         Toast.makeText(this, "Logged in successfully", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, MainActivity::class.java))
+                        startActivity(Intent(this, HomeActivity::class.java))
                     } else {
                         Toast.makeText(this, "Failed to log in ${it.exception.toString()}", Toast.LENGTH_SHORT).show()
                     }

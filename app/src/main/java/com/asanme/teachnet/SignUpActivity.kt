@@ -25,7 +25,7 @@ class SignUpActivity : AppCompatActivity() {
         db = FirebaseDatabase.getInstance()
 
         //Go to login
-        binding.signUpTextBtn.setOnClickListener{ startActivity(Intent(this, LoginScreenActivity::class.java)) }
+        binding.signUpTextBtn.setOnClickListener{ startActivity(Intent(this, LoginActivity::class.java)) }
 
         //Register user
         binding.signUpBtn.setOnClickListener{
@@ -37,7 +37,7 @@ class SignUpActivity : AppCompatActivity() {
             val password = binding.passwordInput.text.toString()
 
             //TODO Check AuthResult (it) and display error depending on the exception
-            //TODO Prevent server from creating the user in case there's a problem with Realtime Database
+            //TODO Prevent server from creating the user (FirebaseAuth) in case there's a problem with Realtime Database
             if(email.isNotEmpty() && username.isNotEmpty() && username.isNotEmpty() && name.isNotEmpty() && surname.isNotEmpty() && password.isNotEmpty())
             {
                 Log.i("FIREBASE INFO", "Not empty")
@@ -55,7 +55,7 @@ class SignUpActivity : AppCompatActivity() {
                             .addOnCompleteListener {
                                 if(it.isSuccessful)
                                 {
-                                    //startActivity(Intent(this, LoginScreenActivity::class.java))
+                                    startActivity(Intent(this, HomeActivity::class.java))
                                     Log.i("FIREBASE INFO", "Registered sucessfully")
                                     Toast.makeText(this, "User was created successfully!", Toast.LENGTH_SHORT).show()
                                 }

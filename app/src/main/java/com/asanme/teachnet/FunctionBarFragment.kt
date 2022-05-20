@@ -1,23 +1,44 @@
 package com.asanme.teachnet
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.asanme.teachnet.databinding.FunctionBarBinding
 
 class FunctionBarFragment : Fragment() {
-    companion object {
+    lateinit var mView: View
+    lateinit var binding : FunctionBarBinding
 
-        fun newInstance(): FunctionBarFragment {
-            return FunctionBarFragment()
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FunctionBarBinding.inflate(layoutInflater)
+
+        binding.homeBtn.setOnClickListener {
+            startActivity(Intent(this@FunctionBarFragment.requireContext(), HomeActivity::class.java))
         }
-    }
 
-    //3
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.function_bar, container, false)
+        binding.searchBtn.setOnClickListener {
+            startActivity(Intent(this@FunctionBarFragment.requireContext(), SearchActivity::class.java))
+        }
+
+        binding.timetableBtn.setOnClickListener {
+            startActivity(Intent(this@FunctionBarFragment.requireContext(), TimetableActivity::class.java))
+        }
+
+        binding.notificationsBtn.setOnClickListener {
+            startActivity(Intent(this@FunctionBarFragment.requireContext(), NotificationsActivity::class.java))
+        }
+
+        binding.profileBtn.setOnClickListener {
+            startActivity(Intent(this@FunctionBarFragment.requireContext(), ProfileActivity::class.java))
+        }
+
+        return binding.root
     }
 }
