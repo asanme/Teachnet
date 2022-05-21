@@ -5,10 +5,10 @@
     android:id="@+id/carView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    cardView:cardCornerRadius="30dp"
+    cardView:cardCornerRadius="10dp"
     cardView:cardElevation="0dp"
     cardView:cardBackgroundColor="#F1F6FB"
-    android:layout_margin="8dp">
+    android:layout_margin="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
