@@ -4,9 +4,9 @@
     xmlns:cardView="http://schemas.android.com/apk/res-auto"
     android:id="@+id/carView"
     android:layout_width="match_parent"
-    android:layout_height="75dp"
-    cardView:cardCornerRadius="8dp"
-    cardView:cardElevation="8dp"
+    android:layout_height="match_parent"
+    cardView:cardCornerRadius="30dp"
+    cardView:cardElevation="0dp"
     cardView:cardBackgroundColor="#F1F6FB"
     android:layout_margin="8dp">
 
