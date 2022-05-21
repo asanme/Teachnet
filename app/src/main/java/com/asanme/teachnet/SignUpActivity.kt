@@ -38,6 +38,7 @@ class SignUpActivity : AppCompatActivity() {
 
             //TODO Check AuthResult (it) and display error depending on the exception
             //TODO Prevent server from creating the user (FirebaseAuth) in case there's a problem with Realtime Database
+            // Possible solution: Checking if the entered values are valid before creating with Auth
             if(email.isNotEmpty() && username.isNotEmpty() && username.isNotEmpty() && name.isNotEmpty() && surname.isNotEmpty() && password.isNotEmpty())
             {
                 Log.i("FIREBASE INFO", "Not empty")
