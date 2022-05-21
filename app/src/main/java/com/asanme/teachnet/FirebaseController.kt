@@ -1,31 +1,30 @@
 package com.asanme.teachnet
 
 import android.util.Log
-import com.google.firebase.database.FirebaseDatabase
+import com.asanme.teachnet.model.TopicItem
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class FirebaseController {
-    fun retrieveUserData(uid:String){
-        FirebaseDatabase
-            .getInstance("https://teachnet-asanme-default-rtdb.europe-west1.firebasedatabase.app")
-            .getReference("Users")
-            .child(uid)
-            .get()
-            .addOnSuccessListener {
-            Log.i("FIREBASECONTROLLER", "Got value ${it.value}")
-        }.addOnFailureListener{
-            Log.e("FIREBASECONTROLLER", "Error getting data", it)
-        }
-    }
+    val db = Firebase.database("https://teachnet-asanme-default-rtdb.europe-west1.firebasedatabase.app/")
+    val dbRef = db.getReference("Topics")
 
-    fun retrieveTopics(){
+    init {
+        dbRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                Log.i("DATABASE CHANGES", snapshot.value.toString())
 
-        val inst = FirebaseDatabase
-            .getInstance("https://teachnet-asanme-default-rtdb.europe-west1.firebasedatabase.app")
-            .getReference("Topics")
-            .get()
-            .addOnCompleteListener {
-                Log.i("FIREBASECONTROLLERINFO", "Returned ${it.result}")
+                val listTopics : List<TopicItem> = snapshot.children.map{ dataSnapshot ->
+                    dataSnapshot.getValue(TopicItem::class.java)!!
+                }
+
+                Log.i("ITEMS", listTopics.toString())
             }
 
+            override fun onCancelled(error: DatabaseError) {
+                //Nothing
+            }
+        })
     }
 }
