@@ -29,19 +29,19 @@
             android:screenOrientation="portrait"/>
         -->
         <activity
-            android:name=".other.SearchActivity"
+            android:name=".search_controllers.SearchActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".other.TimetableActivity"
+            android:name=".timetable_controllers.TimetableActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".other.NotificationsActivity"
+            android:name=".notification_controllers.NotificationsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".other.ProfileActivity"
+            android:name=".profile_controllers.ProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

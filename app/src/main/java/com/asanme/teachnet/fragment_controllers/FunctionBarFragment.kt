@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.asanme.teachnet.home_controllers.HomeActivity
-import com.asanme.teachnet.other.TimetableActivity
+import com.asanme.teachnet.timetable_controllers.TimetableActivity
 import com.asanme.teachnet.databinding.FunctionBarBinding
-import com.asanme.teachnet.other.NotificationsActivity
-import com.asanme.teachnet.other.ProfileActivity
-import com.asanme.teachnet.other.SearchActivity
+import com.asanme.teachnet.notification_controllers.NotificationsActivity
+import com.asanme.teachnet.profile_controllers.ProfileActivity
+import com.asanme.teachnet.search_controllers.SearchActivity
 
 class FunctionBarFragment : Fragment() {
     lateinit var mView: View

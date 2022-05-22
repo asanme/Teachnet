@@ -1,28 +1,27 @@
-package com.asanme.teachnet.home_controllers
+package com.asanme.teachnet.forum_controllers
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.asanme.teachnet.model.TopicItem
+import com.asanme.teachnet.model.ForumThread
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-class FirebaseController {
+class ThreadController {
     val db = Firebase.database("https://teachnet-asanme-default-rtdb.europe-west1.firebasedatabase.app/")
-    val dbRef = db.getReference("Topics")
+    val dbRef = db.getReference("Threads")
 
-    fun fetchTopics(liveData: MutableLiveData<List<TopicItem>>) {
+    fun fetchThreads(liveData: MutableLiveData<List<ForumThread>>) {
         dbRef
-            .orderByChild("topicName")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     Log.i("DATABASE CHANGES", snapshot.value.toString())
 
-                    val topicListItems : List<TopicItem> = snapshot.children.map{ dataSnapshot ->
-                        dataSnapshot.getValue(TopicItem::class.java)!!
+                    val threadListItems : List<ForumThread> = snapshot.children.map{ dataSnapshot ->
+                        dataSnapshot.getValue(ForumThread::class.java)!!
                     }
 
-                    liveData.postValue(topicListItems)
+                    liveData.postValue(threadListItems)
                     Log.i("LIVEDATA", "${liveData}")
                 }
 

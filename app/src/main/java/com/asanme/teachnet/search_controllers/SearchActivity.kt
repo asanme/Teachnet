@@ -1,12 +1,12 @@
-package com.asanme.teachnet.other
+package com.asanme.teachnet.search_controllers
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.asanme.teachnet.R
 
-class ProfileActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.profile_screen)
+        setContentView(R.layout.search_screen)
     }
 }

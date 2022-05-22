@@ -152,7 +152,7 @@
             app:srcCompat="@drawable/ic_paper_plane_solid" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/topicContainer"
+            android:id="@+id/threadContainer"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline1012"
@@ -168,5 +168,9 @@
         <variable
             name="topicName"
             type="String" />
+
+        <variable
+            name="threadViewModel"
+            type="com.asanme.teachnet.forum_controllers.ThreadViewModel" />
     </data>
 </layout>

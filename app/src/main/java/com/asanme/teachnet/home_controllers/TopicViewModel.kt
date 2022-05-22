@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.asanme.teachnet.model.TopicItem
 
 class TopicViewModel: ViewModel() {
-    private val repository = FirebaseController()
+    private val repository = TopicController()
 
     private val _topicData = MutableLiveData<List<TopicItem>>()
     val topicData: LiveData<List<TopicItem>> = _topicData

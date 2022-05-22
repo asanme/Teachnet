@@ -1,12 +1,12 @@
-package com.asanme.teachnet.other
+package com.asanme.teachnet.timetable_controllers
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.asanme.teachnet.R
 
-class NotificationsActivity : AppCompatActivity() {
+class TimetableActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.notifications_screen)
+        setContentView(R.layout.timetable_screen)
     }
 }
