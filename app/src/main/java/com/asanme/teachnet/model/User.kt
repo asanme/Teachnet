@@ -1,4 +1,4 @@
-package com.asanme.teachnet
+package com.asanme.teachnet.model
 
 /**
  * User parameters

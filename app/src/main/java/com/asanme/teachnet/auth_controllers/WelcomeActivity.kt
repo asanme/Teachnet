@@ -1,9 +1,8 @@
-package com.asanme.teachnet
+package com.asanme.teachnet.auth_controllers
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.asanme.teachnet.databinding.LoginScreenBinding
 import com.asanme.teachnet.databinding.WelcomeScreenBinding
 
 class WelcomeActivity : AppCompatActivity() {

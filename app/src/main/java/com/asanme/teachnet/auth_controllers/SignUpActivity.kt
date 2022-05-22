@@ -1,11 +1,13 @@
-package com.asanme.teachnet
+package com.asanme.teachnet.auth_controllers
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.asanme.teachnet.home_controllers.HomeActivity
 import com.asanme.teachnet.databinding.SignupScreenBinding
+import com.asanme.teachnet.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 

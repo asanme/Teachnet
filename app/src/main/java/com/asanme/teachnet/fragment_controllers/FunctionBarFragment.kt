@@ -1,4 +1,4 @@
-package com.asanme.teachnet
+package com.asanme.teachnet.fragment_controllers
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.asanme.teachnet.home_controllers.HomeActivity
+import com.asanme.teachnet.other.TimetableActivity
 import com.asanme.teachnet.databinding.FunctionBarBinding
+import com.asanme.teachnet.other.NotificationsActivity
+import com.asanme.teachnet.other.ProfileActivity
+import com.asanme.teachnet.other.SearchActivity
 
 class FunctionBarFragment : Fragment() {
     lateinit var mView: View

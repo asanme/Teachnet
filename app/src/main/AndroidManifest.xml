@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Teachnet">
         <activity
-            android:name=".LoginActivity"
+            android:name=".auth_controllers.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".auth_controllers.SignUpActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
        <!-- <activity
@@ -24,23 +24,23 @@
             android:exported="false"
             android:screenOrientation="portrait"/> -->
         <activity
-            android:name=".SearchActivity"
+            android:name=".other.SearchActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".TimetableActivity"
+            android:name=".other.TimetableActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".NotificationsActivity"
+            android:name=".other.NotificationsActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".other.ProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".HomeActivity"
+            android:name=".home_controllers.HomeActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

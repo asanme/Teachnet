@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_welcome"
-    tools:context=".WelcomeActivity">
+    tools:context=".auth_controllers.WelcomeActivity">
 
     <Button
         android:id="@+id/signInBtn"

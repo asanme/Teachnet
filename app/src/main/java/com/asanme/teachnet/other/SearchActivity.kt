@@ -1,11 +1,12 @@
-package com.asanme.teachnet
+package com.asanme.teachnet.other
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.asanme.teachnet.R
 
-class TimetableActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.timetable_screen)
+        setContentView(R.layout.search_screen)
     }
 }
