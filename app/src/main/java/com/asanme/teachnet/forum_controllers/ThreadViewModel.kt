@@ -11,7 +11,7 @@ class ThreadViewModel: ViewModel() {
     private val _threadData = MutableLiveData<List<ForumThread>>()
     val threadData: LiveData<List<ForumThread>> = _threadData
 
-    fun fetchThreads() {
-        repository.fetchThreads(_threadData)
+    fun fetchThreads(filterByTopic:String) {
+        repository.fetchThreads(filterByTopic, _threadData)
     }
 }

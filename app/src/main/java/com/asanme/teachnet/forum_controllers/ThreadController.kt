@@ -9,9 +9,10 @@ import com.google.firebase.ktx.Firebase
 
 class ThreadController {
     val db = Firebase.database("https://teachnet-asanme-default-rtdb.europe-west1.firebasedatabase.app/")
-    val dbRef = db.getReference("Threads")
+    val dbRef = db.getReference("Threads").child("threadTopic")
 
-    fun fetchThreads(liveData: MutableLiveData<List<ForumThread>>) {
+    fun fetchThreads(filter:String, liveData: MutableLiveData<List<ForumThread>>) {
+        Log.i("LOADING QUERY: ", filter)
         dbRef
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {

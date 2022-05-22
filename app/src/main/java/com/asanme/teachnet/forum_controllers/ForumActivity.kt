@@ -13,21 +13,22 @@ import com.asanme.teachnet.home_controllers.TopicRecyclerViewAdapter
 class ForumActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val binding : ForumScreenBinding = DataBindingUtil.setContentView(this, R.layout.forum_screen)
         val threadViewModel : ThreadViewModel = ViewModelProvider(this)[ThreadViewModel::class.java]
-
-        Log.i("TOPICID:", "${intent.getStringExtra("topicId")}")
-        binding.setTopicName(intent.getStringExtra("topicName"))
-
         binding.lifecycleOwner = this
-
         binding.threadViewModel = threadViewModel
+
+        val topicName = intent.getStringExtra("topicName")
+        val topicId = intent.getStringExtra("topicId")
+        Log.i("TOPICID:", "${topicId}")
+        Log.i("TOPICNAME:", "${topicName}")
+
+        binding.setTopicName(topicName)
 
         val threadAdapter = ThreadRecyclerViewAdapter()
         binding.threadContainer.adapter = threadAdapter
 
-        threadViewModel.fetchThreads()
+        threadViewModel.fetchThreads(topicName!!)
         threadViewModel.threadData.observe(this) { threadItems ->
             threadAdapter.setThreads(threadItems)
         }
