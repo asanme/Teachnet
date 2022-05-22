@@ -84,19 +84,20 @@
             app:layout_constraintGuide_percent="0.97" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/topicName"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:fontFamily="@font/open_sans"
             android:gravity="left"
-            android:text="Topics"
+            android:text="@{topicName}"
             android:textColor="#1C2D57"
             android:textSize="50sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
             app:layout_constraintEnd_toStartOf="@+id/guideline20"
             app:layout_constraintStart_toStartOf="@+id/guideline19"
-            app:layout_constraintTop_toTopOf="@+id/guideline23" />
+            app:layout_constraintTop_toTopOf="@+id/guideline23"
+            tools:text="TopicName" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline21"
@@ -165,7 +166,7 @@
 
     <data>
         <variable
-            name="topicViewModel"
-            type="com.asanme.teachnet.home_controllers.TopicViewModel" />
+            name="topicName"
+            type="String" />
     </data>
 </layout>

@@ -13,6 +13,7 @@ class FirebaseController {
 
     fun fetchTopics(liveData: MutableLiveData<List<TopicItem>>) {
         dbRef
+            .orderByChild("topicName")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     Log.i("DATABASE CHANGES", snapshot.value.toString())

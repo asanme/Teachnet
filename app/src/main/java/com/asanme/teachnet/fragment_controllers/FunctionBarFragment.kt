@@ -16,14 +16,13 @@ import com.asanme.teachnet.other.SearchActivity
 class FunctionBarFragment : Fragment() {
     lateinit var mView: View
     lateinit var binding : FunctionBarBinding
-
+    //TODO Add logic so that the function bar changes the button color depending on the screen
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FunctionBarBinding.inflate(layoutInflater)
-
         binding.homeBtn.setOnClickListener {
             startActivity(Intent(this@FunctionBarFragment.requireContext(), HomeActivity::class.java))
         }

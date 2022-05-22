@@ -12,33 +12,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Teachnet">
         <activity
+            android:name=".forum_controllers.ForumActivity"
+            android:exported="false" />
+        <activity
             android:name=".auth_controllers.LoginActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".auth_controllers.SignUpActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
-       <!-- <activity
+            android:screenOrientation="portrait" />
+        <!--
+ <activity
             android:name=".HomeActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/> -->
+            android:screenOrientation="portrait"/>
+        -->
         <activity
             android:name=".other.SearchActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".other.TimetableActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".other.NotificationsActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".other.ProfileActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".home_controllers.HomeActivity"
             android:exported="true"
