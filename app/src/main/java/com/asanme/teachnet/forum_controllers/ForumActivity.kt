@@ -33,10 +33,10 @@ class ForumActivity() : AppCompatActivity() {
             threadAdapter.setThreads(threadItems)
         }
 
-
-        //TODO Use the postId fetched from the last activity to load the data in case it changes (Realtime Database)
-
         var frag = FunctionBarFragment()
         supportFragmentManager.beginTransaction().add(R.id.functionBarContainer, frag).commit()
+        //TODO Use the postId fetched from the last activity to load the data in case it changes (Realtime Database) (OPTIONAL)
     }
+
+    //TODO ADD functionality to create a new Thread
 }

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.asanme.teachnet.R
 import com.asanme.teachnet.databinding.ThreadContainerBinding
 import com.asanme.teachnet.model.ForumThread
+import com.squareup.picasso.Picasso
 
 class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val threadItems = mutableListOf<ForumThread>()
@@ -46,6 +47,8 @@ class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
         private val binding = ThreadContainerBinding.bind(itemView)
         fun onBind(threadItem: ForumThread){
             binding.threadTitleContainer.text = threadItem.threadTitle
+            binding.userNameContainer.text = threadItem.threadOwnerId
+            Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png").into(binding.userIcon)
         }
     }
 }
