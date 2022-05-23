@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.asanme.teachnet.R
 import com.asanme.teachnet.databinding.ThreadContainerBinding
 import com.asanme.teachnet.model.ForumThread
+import com.asanme.teachnet.post_controller.PostActivity
 import com.squareup.picasso.Picasso
 
 class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -20,14 +21,15 @@ class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as ThreadItemViewHolder).onBind(threadItems[position])
-        /*holder.itemView.setOnClickListener {
+        holder.itemView.setOnClickListener {
             //TODO Go to the desired forum
 
-            val intent = Intent(it.context, ForumActivity::class.java)
-            intent.putExtra("threadId", holder.itemView.findViewById<TextView>(R.id.topicNameId).text)
-            intent.putExtra("threadName", holder.itemView.findViewById<TextView>(R.id.topicNameContainer).text)
+            val intent = Intent(it.context, PostActivity::class.java)
+            intent.putExtra("threadId", holder.itemView.findViewById<TextView>(R.id.threadIdContainer).text)
+            //intent.putExtra("threadId", holder.itemView.findViewById<TextView>(R.id.topicNameId).text)
+            //intent.putExtra("threadName", holder.itemView.findViewById<TextView>(R.id.topicNameContainer).text)
             it.context.startActivity(intent)
-        }*/
+        }
     }
 
     override fun getItemCount(): Int {

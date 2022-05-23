@@ -16,12 +16,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             cardView:layout_constraintBottom_toTopOf="@+id/horizontal3"
             cardView:layout_constraintEnd_toStartOf="@+id/horizontal1"
             cardView:layout_constraintStart_toStartOf="parent"
-            cardView:layout_constraintTop_toTopOf="parent" />
+            cardView:layout_constraintTop_toTopOf="@+id/searchView" />
 
         <SearchView
             android:id="@+id/searchView"

@@ -6,7 +6,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/carView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         cardView:cardBackgroundColor="#F1F6FB"
         cardView:cardCornerRadius="10dp"
         cardView:cardElevation="0dp">
@@ -22,6 +22,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 cardView:layout_constraintGuide_percent="0.225" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                cardView:layout_constraintGuide_percent="0.25" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/v2"
@@ -52,6 +59,13 @@
                 cardView:layout_constraintGuide_percent="0.3" />
 
             <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                cardView:layout_constraintGuide_percent="0.9" />
+
+            <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/h3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,10 +81,9 @@
 
             <ImageView
                 android:id="@+id/userIcon"
-                android:minHeight="100dp"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                cardView:layout_constraintBottom_toTopOf="@+id/h2"
+                cardView:layout_constraintBottom_toTopOf="@+id/h7"
                 cardView:layout_constraintEnd_toStartOf="@+id/v5"
                 cardView:layout_constraintStart_toStartOf="@+id/v2"
                 cardView:layout_constraintTop_toTopOf="@+id/h1"
@@ -87,12 +100,12 @@
                 android:textStyle="italic"
                 cardView:layout_constraintBottom_toTopOf="@+id/h2"
                 cardView:layout_constraintEnd_toStartOf="@+id/v3"
-                cardView:layout_constraintStart_toStartOf="@+id/v5"
+                cardView:layout_constraintStart_toStartOf="@+id/v7"
                 cardView:layout_constraintTop_toTopOf="@+id/h1"
                 tools:text="Username" />
 
             <TextView
-                android:id="@+id/threadTitleContainer"
+                android:id="@+id/commentContainer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -104,23 +117,23 @@
                 cardView:layout_constraintBottom_toTopOf="@+id/h4"
                 cardView:layout_constraintEnd_toStartOf="@+id/v3"
                 cardView:layout_constraintHorizontal_bias="0.0"
-                cardView:layout_constraintStart_toStartOf="@+id/v2"
+                cardView:layout_constraintStart_toStartOf="@+id/v7"
                 cardView:layout_constraintTop_toTopOf="@+id/h3"
                 cardView:layout_constraintVertical_bias="0.052"
-                tools:text="Thread Title" />
+                tools:text="Comment" />
 
             <TextView
-                android:id="@+id/threadIdContainer"
+                android:id="@+id/topicNameId"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="@{threadId}"
+                android:text="@{userId}"
                 android:visibility="invisible" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <data>
         <variable
-            name="threadId"
+            name="userId"
             type="String" />
     </data>
 </layout>

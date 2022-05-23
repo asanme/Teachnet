@@ -24,6 +24,7 @@ class ForumActivity() : AppCompatActivity() {
         Log.i("TOPICNAME:", "${topicName}")
 
         binding.setTopicName(topicName)
+        binding.setTopicName(topicId)
 
         val threadAdapter = ThreadRecyclerViewAdapter()
         binding.threadContainer.adapter = threadAdapter
