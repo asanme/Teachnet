@@ -2,6 +2,7 @@ package com.asanme.teachnet.forum_controllers
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
@@ -21,11 +22,14 @@ class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as ThreadItemViewHolder).onBind(threadItems[position])
+        Log.i("THREAD INFORMATION", "OPENING POSTACTIVITY")
         holder.itemView.setOnClickListener {
-            //TODO Go to the desired forum
+            Log.i("THREAD INFORMATION", "OPENING POSTACTIVITY")
 
             val intent = Intent(it.context, PostActivity::class.java)
             intent.putExtra("threadId", holder.itemView.findViewById<TextView>(R.id.threadIdContainer).text)
+            intent.putExtra("threadName", holder.itemView.findViewById<TextView>(R.id.threadTitleContainer).text)
+
             //intent.putExtra("threadId", holder.itemView.findViewById<TextView>(R.id.topicNameId).text)
             //intent.putExtra("threadName", holder.itemView.findViewById<TextView>(R.id.topicNameContainer).text)
             it.context.startActivity(intent)
@@ -50,6 +54,7 @@ class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
         fun onBind(threadItem: ForumThread){
             binding.threadTitleContainer.text = threadItem.threadTitle
             binding.userNameContainer.text = threadItem.threadOwnerId
+            binding.threadId = threadItem.threadId
             Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png").into(binding.userIcon)
         }
     }

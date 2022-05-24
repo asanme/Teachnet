@@ -2,7 +2,7 @@ package com.asanme.teachnet.post_controller
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.asanme.teachnet.model.ForumThread
+import com.asanme.teachnet.model.CommentItem
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -11,7 +11,7 @@ class PostController {
     val db = Firebase.database("https://teachnet-asanme-default-rtdb.europe-west1.firebasedatabase.app/")
     val dbRef = db.getReference("Comments")
 
-    fun fetchComments(filter:String, liveData: MutableLiveData<List<ForumThread>>) {
+    fun fetchComments(filter:String, liveData: MutableLiveData<List<CommentItem>>) {
         Log.i("LOADING QUERY: ", filter)
         dbRef
             .orderByChild("threadId")
@@ -19,8 +19,8 @@ class PostController {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     Log.i("DATABASE CHANGES", snapshot.value.toString())
 
-                    val threadListItems : List<ForumThread> = snapshot.children.map{ dataSnapshot ->
-                        dataSnapshot.getValue(ForumThread::class.java)!!
+                    val threadListItems : List<CommentItem> = snapshot.children.map{ dataSnapshot ->
+                        dataSnapshot.getValue(CommentItem::class.java)!!
                     }.filter {
                         filter.equals(it.threadId)
                     }

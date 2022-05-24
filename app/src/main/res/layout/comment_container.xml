@@ -6,7 +6,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/carView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         cardView:cardBackgroundColor="#F1F6FB"
         cardView:cardCornerRadius="10dp"
         cardView:cardElevation="0dp">
@@ -108,18 +108,17 @@
                 android:id="@+id/commentContainer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/open_sans"
                 android:gravity="center_vertical"
                 android:justificationMode="inter_word"
                 android:textColor="#2E3E5C"
                 android:textSize="20sp"
-                cardView:layout_constraintBottom_toTopOf="@+id/h4"
+                cardView:layout_constraintBottom_toTopOf="@+id/h7"
                 cardView:layout_constraintEnd_toStartOf="@+id/v3"
                 cardView:layout_constraintHorizontal_bias="0.0"
                 cardView:layout_constraintStart_toStartOf="@+id/v7"
                 cardView:layout_constraintTop_toTopOf="@+id/h3"
-                cardView:layout_constraintVertical_bias="0.052"
+                cardView:layout_constraintVertical_bias="0.005"
                 tools:text="Comment" />
 
             <TextView

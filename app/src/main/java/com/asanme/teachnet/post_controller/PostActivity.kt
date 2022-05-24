@@ -7,7 +7,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.asanme.teachnet.R
 import com.asanme.teachnet.databinding.PostScreenBinding
-import com.asanme.teachnet.fragment_controllers.FunctionBarFragment
 
 class PostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +18,10 @@ class PostActivity : AppCompatActivity() {
 
         val threadId = intent.getStringExtra("threadId")
         Log.i("THREADID:", "${threadId}")
+        val threadName = intent.getStringExtra("threadName")
+        Log.i("THREADNAME:", "${threadName}")
+
+        binding.threadName = threadName
 
         val postAdapter = PostRecyclerViewAdapter()
         binding.threadContainer.adapter = postAdapter
@@ -28,8 +31,6 @@ class PostActivity : AppCompatActivity() {
             postAdapter.setThreads(threadItems)
         }
 
-        var frag = FunctionBarFragment()
-        supportFragmentManager.beginTransaction().add(R.id.functionBarContainer, frag).commit()
         //TODO Use the postId fetched from the last activity to load the data in case it changes (Realtime Database) (OPTIONAL)
     }
 }
