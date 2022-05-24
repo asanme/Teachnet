@@ -1,5 +1,6 @@
 package com.asanme.teachnet.forum_controllers
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,7 @@ import com.asanme.teachnet.R
 import com.asanme.teachnet.databinding.ForumScreenBinding
 import com.asanme.teachnet.fragment_controllers.FunctionBarFragment
 import com.asanme.teachnet.home_controllers.TopicRecyclerViewAdapter
+import com.asanme.teachnet.post_controller.PostActivity
 
 class ForumActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +36,10 @@ class ForumActivity() : AppCompatActivity() {
 
         var frag = FunctionBarFragment()
         supportFragmentManager.beginTransaction().add(R.id.functionBarContainer, frag).commit()
+
+        binding.createPostBtn.setOnClickListener {
+            startActivity(Intent(this, PostActivity::class.java))
+        }
         //TODO Use the postId fetched from the last activity to load the data in case it changes (Realtime Database) (OPTIONAL)
     }
 

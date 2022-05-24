@@ -21,16 +21,19 @@ class PostActivity : AppCompatActivity() {
         val threadName = intent.getStringExtra("threadName")
         Log.i("THREADNAME:", "${threadName}")
 
-        binding.threadName = threadName
+        threadName?.let {
+            threadId?.let {
+                binding.threadName = threadName
 
-        val postAdapter = PostRecyclerViewAdapter()
-        binding.threadContainer.adapter = postAdapter
+                val postAdapter = PostRecyclerViewAdapter()
+                binding.threadContainer.adapter = postAdapter
 
-        postViewModel.fetchComents(threadId!!)
-        postViewModel.threadData.observe(this) { threadItems ->
-            postAdapter.setThreads(threadItems)
+                postViewModel.fetchComents(threadId)
+                postViewModel.threadData.observe(this) { threadItems ->
+                    postAdapter.setThreads(threadItems)
+                }
+            }
         }
-
         //TODO Use the postId fetched from the last activity to load the data in case it changes (Realtime Database) (OPTIONAL)
     }
 }

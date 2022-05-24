@@ -14,19 +14,22 @@
         <entry key="..\:/Teachnet/app/src/main/res/drawable/ic_notification.xml" value="0.2595" />
         <entry key="..\:/Teachnet/app/src/main/res/drawable/ic_notifications.xml" value="0.3505" />
         <entry key="..\:/Teachnet/app/src/main/res/drawable/ic_paper_plane_solid.xml" value="0.3505" />
+        <entry key="..\:/Teachnet/app/src/main/res/drawable/ic_plus.xml" value="0.1235" />
         <entry key="..\:/Teachnet/app/src/main/res/drawable/ic_profile.xml" value="0.3505" />
         <entry key="..\:/Teachnet/app/src/main/res/drawable/ic_search.xml" value="0.1" />
+        <entry key="..\:/Teachnet/app/src/main/res/drawable/ic_share.xml" value="0.234" />
         <entry key="..\:/Teachnet/app/src/main/res/drawable/reply_box.xml" value="0.3505" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/activity_sign_up.xml" value="0.3489583333333333" />
-        <entry key="..\:/Teachnet/app/src/main/res/layout/comment_container.xml" value="0.25" />
-        <entry key="..\:/Teachnet/app/src/main/res/layout/forum_screen.xml" value="0.3489583333333333" />
+        <entry key="..\:/Teachnet/app/src/main/res/layout/comment_container.xml" value="0.264" />
+        <entry key="..\:/Teachnet/app/src/main/res/layout/forum_screen.xml" value="0.2" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/function_bar.xml" value="0.25" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/home_screen.xml" value="0.18" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/login_screen.xml" value="0.33" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/notifications_screen.xml" value="0.3489583333333333" />
-        <entry key="..\:/Teachnet/app/src/main/res/layout/post_container.xml" value="0.22" />
+        <entry key="..\:/Teachnet/app/src/main/res/layout/post_container.xml" value="0.2" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/post_screen.xml" value="0.25" />
+        <entry key="..\:/Teachnet/app/src/main/res/layout/profile_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/search_bar.xml" value="0.2" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/search_screen.xml" value="0.3489583333333333" />
         <entry key="..\:/Teachnet/app/src/main/res/layout/signup_screen.xml" value="0.33" />

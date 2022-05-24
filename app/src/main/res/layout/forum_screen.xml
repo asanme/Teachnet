@@ -48,6 +48,13 @@
             app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline101123"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.82" />
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1012"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -161,6 +168,16 @@
             app:layout_constraintTop_toTopOf="@+id/h1"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <ImageView
+            android:id="@+id/createPostBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline1012"
+            app:layout_constraintEnd_toStartOf="@+id/guideline20"
+            app:layout_constraintStart_toStartOf="@+id/guideline222"
+            app:layout_constraintTop_toTopOf="@+id/guideline101123"
+            app:srcCompat="@drawable/ic_plus" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -17,30 +17,6 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:minHeight="100dp"
-                cardView:layout_constraintBottom_toTopOf="@+id/h5"
-                cardView:layout_constraintEnd_toStartOf="@+id/v3"
-                cardView:layout_constraintStart_toStartOf="@+id/v2"
-                cardView:layout_constraintTop_toTopOf="@+id/threadTitleContainer"
-                cardView:srcCompat="@drawable/bg_separator" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:minHeight="100dp"
-                cardView:layout_constraintBottom_toTopOf="@+id/h4"
-                cardView:layout_constraintEnd_toStartOf="@+id/v6"
-                cardView:layout_constraintHorizontal_bias="1.0"
-                cardView:layout_constraintStart_toStartOf="@+id/v11"
-                cardView:layout_constraintTop_toTopOf="@+id/h7"
-                cardView:layout_constraintVertical_bias="1.0"
-                cardView:srcCompat="@drawable/reply_box" />
-
-            <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -51,7 +27,7 @@
                 cardView:layout_constraintStart_toStartOf="@+id/v7"
                 cardView:layout_constraintTop_toTopOf="@+id/h7"
                 cardView:layout_constraintVertical_bias="1.0"
-                cardView:srcCompat="@drawable/ic_comment" />
+                cardView:srcCompat="@drawable/ic_paper_plane_solid" />
 
             <TextView
                 android:id="@+id/topicNameId"
@@ -81,7 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/reply_box"
                 android:fontFamily="@font/open_sans"
                 android:gravity="top|left"
                 android:justificationMode="inter_word"
@@ -98,13 +74,14 @@
 
 
             <EditText
+                android:background="@drawable/reply_box"
                 android:id="@+id/commentTextEdit"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
-                android:background="@android:color/transparent"
                 android:fontFamily="@font/open_sans"
                 android:gravity="top|left"
+                android:hint="Message"
                 android:justificationMode="inter_word"
                 android:singleLine="false"
                 android:textColor="#2E3E5C"
@@ -112,10 +89,9 @@
                 cardView:layout_constraintBottom_toTopOf="@+id/h4"
                 cardView:layout_constraintEnd_toStartOf="@+id/v6"
                 cardView:layout_constraintHorizontal_bias="0.0"
-                cardView:layout_constraintStart_toStartOf="@+id/v11"
+                cardView:layout_constraintStart_toStartOf="@+id/v2"
                 cardView:layout_constraintTop_toTopOf="@+id/h7"
-                cardView:layout_constraintVertical_bias="1.0"
-                android:hint="Message"/>
+                cardView:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/creatorIcon"
@@ -126,17 +102,6 @@
                 cardView:layout_constraintEnd_toStartOf="@+id/v5"
                 cardView:layout_constraintStart_toStartOf="@+id/v2"
                 cardView:layout_constraintTop_toTopOf="@+id/h1"
-                cardView:srcCompat="@drawable/ic_user" />
-
-            <ImageView
-                android:id="@+id/thisUserIcon"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:minHeight="100dp"
-                cardView:layout_constraintBottom_toTopOf="@+id/h4"
-                cardView:layout_constraintEnd_toStartOf="@+id/v5"
-                cardView:layout_constraintStart_toStartOf="@+id/v2"
-                cardView:layout_constraintTop_toTopOf="@+id/h5"
                 cardView:srcCompat="@drawable/ic_user" />
 
             <androidx.constraintlayout.widget.Guideline
@@ -179,7 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                cardView:layout_constraintGuide_percent="0.87" />
+                cardView:layout_constraintGuide_percent="0.86" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/v7"
