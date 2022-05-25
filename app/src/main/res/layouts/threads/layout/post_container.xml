@@ -7,7 +7,7 @@
         android:id="@+id/carView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        cardView:cardBackgroundColor="#F1F6FB"
+        cardView:cardBackgroundColor="#00F1F6FB"
         cardView:cardCornerRadius="10dp"
         cardView:cardElevation="0dp">
 
@@ -17,15 +17,37 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                cardView:layout_constraintBottom_toTopOf="@+id/h4"
+                cardView:layout_constraintEnd_toStartOf="@+id/v3"
+                cardView:layout_constraintStart_toStartOf="@+id/v2"
+                cardView:layout_constraintTop_toTopOf="@+id/h7"
+                cardView:srcCompat="@drawable/bg_separator" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                cardView:layout_constraintBottom_toTopOf="@+id/h5"
+                cardView:layout_constraintEnd_toStartOf="@+id/v3"
+                cardView:layout_constraintHorizontal_bias="0.0"
+                cardView:layout_constraintStart_toStartOf="@+id/v2"
+                cardView:layout_constraintTop_toTopOf="@+id/h1"
+                cardView:layout_constraintVertical_bias="0.0"
+                cardView:srcCompat="@drawable/bg_separator" />
+
+            <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:minHeight="100dp"
-                cardView:layout_constraintBottom_toTopOf="@+id/h4"
-                cardView:layout_constraintEnd_toStartOf="@+id/v3"
+                cardView:layout_constraintBottom_toTopOf="@+id/v125"
+                cardView:layout_constraintEnd_toStartOf="@+id/v122"
                 cardView:layout_constraintHorizontal_bias="1.0"
                 cardView:layout_constraintStart_toStartOf="@+id/v7"
-                cardView:layout_constraintTop_toTopOf="@+id/h7"
+                cardView:layout_constraintTop_toTopOf="@+id/h777"
                 cardView:layout_constraintVertical_bias="1.0"
                 cardView:srcCompat="@drawable/ic_paper_plane_solid" />
 
@@ -40,68 +62,93 @@
             <TextView
                 android:id="@+id/userNameContainer"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:fontFamily="@font/open_sans"
-                android:gravity="center|left"
+                android:gravity="top|left"
                 android:textColor="#2E3E5C"
                 android:textSize="18sp"
                 android:textStyle="italic"
-                cardView:layout_constraintBottom_toTopOf="@+id/h2"
+                cardView:layout_constraintBottom_toTopOf="@+id/h22213"
                 cardView:layout_constraintEnd_toStartOf="@+id/v3"
                 cardView:layout_constraintStart_toStartOf="@+id/v5"
-                cardView:layout_constraintTop_toTopOf="@+id/h1"
+                cardView:layout_constraintTop_toTopOf="@+id/v124"
                 tools:text="Username" />
 
+
             <EditText
-                android:id="@+id/threadTitleContainer"
+                android:id="@+id/threadTitle"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
                 android:background="@drawable/reply_box"
                 android:fontFamily="@font/open_sans"
                 android:gravity="top|left"
+                android:hint="Thread Title"
+                android:justificationMode="inter_word"
+                android:maxLines="1"
+                android:minHeight="70dp"
+                android:singleLine="false"
+                android:textColor="#2E3E5C"
+                android:textSize="15sp"
+                cardView:layout_constraintBottom_toTopOf="@+id/h4444"
+                cardView:layout_constraintEnd_toStartOf="@+id/v122"
+                cardView:layout_constraintHorizontal_bias="0.0"
+                cardView:layout_constraintStart_toStartOf="@+id/v123"
+                cardView:layout_constraintTop_toTopOf="@+id/h2"
+                cardView:layout_constraintVertical_bias="0.0" />
+
+
+            <EditText
+                android:id="@+id/threadBodyContainer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/reply_box"
+                android:fontFamily="@font/open_sans"
+                android:gravity="top|left"
+                android:hint="Thread Message"
                 android:justificationMode="inter_word"
                 android:singleLine="false"
                 android:textColor="#2E3E5C"
                 android:textSize="15sp"
-                cardView:layout_constraintBottom_toTopOf="@+id/h5"
-                cardView:layout_constraintEnd_toStartOf="@+id/v3"
+                cardView:layout_constraintBottom_toTopOf="@+id/h444"
+                cardView:layout_constraintEnd_toStartOf="@+id/v122"
                 cardView:layout_constraintHorizontal_bias="0.0"
-                cardView:layout_constraintStart_toStartOf="@+id/v2"
+                cardView:layout_constraintStart_toStartOf="@+id/v123"
                 cardView:layout_constraintTop_toTopOf="@+id/h3"
-                cardView:layout_constraintVertical_bias="0.0"
-                android:hint="Thread Message" />
+                cardView:layout_constraintVertical_bias="0.0" />
 
 
             <EditText
-                android:background="@drawable/reply_box"
                 android:id="@+id/commentTextEdit"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
+                android:background="@drawable/reply_box"
                 android:fontFamily="@font/open_sans"
                 android:gravity="top|left"
-                android:hint="Message"
+                android:hint="Reply"
                 android:justificationMode="inter_word"
                 android:singleLine="false"
                 android:textColor="#2E3E5C"
                 android:textSize="15sp"
-                cardView:layout_constraintBottom_toTopOf="@+id/h4"
+                cardView:layout_constraintBottom_toTopOf="@+id/v125"
                 cardView:layout_constraintEnd_toStartOf="@+id/v6"
                 cardView:layout_constraintHorizontal_bias="0.0"
-                cardView:layout_constraintStart_toStartOf="@+id/v2"
-                cardView:layout_constraintTop_toTopOf="@+id/h7"
+                cardView:layout_constraintStart_toStartOf="@+id/v123"
+                cardView:layout_constraintTop_toTopOf="@+id/h777"
                 cardView:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/creatorIcon"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:minHeight="100dp"
-                cardView:layout_constraintBottom_toTopOf="@+id/h2"
+                cardView:layout_constraintBottom_toTopOf="@+id/h22213"
                 cardView:layout_constraintEnd_toStartOf="@+id/v5"
-                cardView:layout_constraintStart_toStartOf="@+id/v2"
-                cardView:layout_constraintTop_toTopOf="@+id/h1"
+                cardView:layout_constraintHorizontal_bias="1.0"
+                cardView:layout_constraintStart_toStartOf="@+id/v123"
+                cardView:layout_constraintTop_toTopOf="@+id/v124"
+                cardView:layout_constraintVertical_bias="1.0"
                 cardView:srcCompat="@drawable/ic_user" />
 
             <androidx.constraintlayout.widget.Guideline
@@ -151,49 +198,99 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                cardView:layout_constraintGuide_percent="0.88" />
+                cardView:layout_constraintGuide_percent="0.87" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/v2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                cardView:layout_constraintGuide_percent="0.03" />
+                cardView:layout_constraintGuide_percent="0.0" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/v3"
+                android:id="@+id/v122"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 cardView:layout_constraintGuide_percent="0.97" />
 
             <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                cardView:layout_constraintGuide_percent="0.03" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v125"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                cardView:layout_constraintGuide_percent="0.97" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v124"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                cardView:layout_constraintGuide_percent="0.02" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                cardView:layout_constraintGuide_percent="1.0" />
+
+            <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/h1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                cardView:layout_constraintGuide_percent="0.03" />
+                cardView:layout_constraintGuide_percent="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h22213"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                cardView:layout_constraintGuide_percent="0.1" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/h2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                cardView:layout_constraintGuide_percent="0.15" />
+                cardView:layout_constraintGuide_percent="0.11" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h4444"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                cardView:layout_constraintGuide_percent="0.21" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/h3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                cardView:layout_constraintGuide_percent="0.1825" />
+                cardView:layout_constraintGuide_percent="0.22" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h444"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                cardView:layout_constraintGuide_percent="0.68" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/h5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                cardView:layout_constraintGuide_percent="0.68" />
+                cardView:layout_constraintGuide_percent="0.7" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/h7"
@@ -203,11 +300,18 @@
                 cardView:layout_constraintGuide_percent="0.72" />
 
             <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h777"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                cardView:layout_constraintGuide_percent="0.75" />
+
+            <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/h4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                cardView:layout_constraintGuide_percent="0.97" />
+                cardView:layout_constraintGuide_percent="1.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

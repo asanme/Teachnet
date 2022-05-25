@@ -30,12 +30,11 @@
             android:exported="false"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait" />
-        <!--
- <activity
-            android:name=".HomeActivity"
+        <activity
+            android:name=".home.HomeActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
-        -->
+
         <activity
             android:name=".search.SearchActivity"
             android:exported="false"
@@ -53,7 +52,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".home.HomeActivity"
+            android:name=".auth.WelcomeActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

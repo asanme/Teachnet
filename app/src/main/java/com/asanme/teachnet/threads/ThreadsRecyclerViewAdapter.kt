@@ -17,14 +17,6 @@ class PostRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as CommentItemViewHolder).onBind(commentItems[position])
-        /*holder.itemView.setOnClickListener {
-            //TODO Go to the desired thread
-
-            val intent = Intent(it.context, PostActivity::class.java)
-            //intent.putExtra("threadId", holder.itemView.findViewById<TextView>(R.id.topicNameId).text)
-            //intent.putExtra("threadName", holder.itemView.findViewById<TextView>(R.id.topicNameContainer).text)
-            it.context.startActivity(intent)
-        }*/
     }
 
     override fun getItemCount(): Int {
