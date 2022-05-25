@@ -35,6 +35,22 @@ android {
         dataBinding = true
         viewBinding = true
     }
+    sourceSets {
+        main {
+            res.srcDirs = [ 'src/main/res',
+                        'src/main/res/layouts/home',
+                        'src/main/res/layouts/auth',
+                        'src/main/res/layouts/threads',
+                        'src/main/res/layouts/topics',
+                        'src/main/res/layouts/containers',
+                        'src/main/res/layouts/profile',
+                        'src/main/res/layouts/timetable',
+                        'src/main/res/layouts/search',
+                        'src/main/res/layouts/notifications',
+                        'src/main/res/layouts/fragments'
+            ]
+        }
+    }
 }
 
 dependencies {

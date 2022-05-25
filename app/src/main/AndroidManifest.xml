@@ -13,20 +13,20 @@
         android:theme="@style/Theme.Teachnet">
         <activity
             android:screenOrientation="portrait"
-            android:name=".post_controller.PostActivity"
+            android:name=".threads.PostActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
             android:screenOrientation="portrait"
-            android:name=".forum_controllers.ForumActivity"
+            android:name=".topics.ForumActivity"
             android:exported="false" />
         <activity
-            android:name=".auth_controllers.LoginActivity"
+            android:name=".auth.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".auth_controllers.SignUpActivity"
+            android:name=".auth.SignUpActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait" />
@@ -37,23 +37,23 @@
             android:screenOrientation="portrait"/>
         -->
         <activity
-            android:name=".search_controllers.SearchActivity"
+            android:name=".search.SearchActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".timetable_controllers.TimetableActivity"
+            android:name=".timetable.TimetableActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".notification_controllers.NotificationsActivity"
+            android:name=".notifications.NotificationsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".profile_controllers.ProfileActivity"
+            android:name=".profile.ProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".home_controllers.HomeActivity"
+            android:name=".home.HomeActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
