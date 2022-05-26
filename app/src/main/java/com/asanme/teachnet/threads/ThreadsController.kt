@@ -3,6 +3,7 @@ package com.asanme.teachnet.threads
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.asanme.teachnet.model.CommentItem
+import com.asanme.teachnet.model.ForumThread
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -35,4 +36,30 @@ class PostController {
             }
         })
     }
+
+    fun fetchPost(filter:String, post: MutableLiveData<List<ForumThread>>) {
+        Log.i("LOADING QUERY: ", filter)
+        dbRef
+            .orderByChild("threadId")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    Log.i("DATABASE CHANGES", snapshot.value.toString())
+
+                    val threadListItems : List<ForumThread> = snapshot.children.map{ dataSnapshot ->
+                        dataSnapshot.getValue(ForumThread::class.java)!!
+                    }.filter {
+                        filter.equals(it.threadId)
+                    }
+
+                    Log.i("DATABASE CHANGES", threadListItems.toString())
+                    post.postValue(threadListItems)
+                    Log.i("LIVEDATA", "${post}")
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    //Nothing
+                }
+            })
+    }
+
 }

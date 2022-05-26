@@ -7,8 +7,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.asanme.teachnet.R
 import com.asanme.teachnet.databinding.PostScreenBinding
+import com.asanme.teachnet.fragments.FunctionBarFragment
 
 class PostActivity : AppCompatActivity() {
+    lateinit var threadId: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding : PostScreenBinding = DataBindingUtil.setContentView(this, R.layout.post_screen)
@@ -17,23 +20,24 @@ class PostActivity : AppCompatActivity() {
         binding.postViewModel = threadsViewModel
 
         val threadId = intent.getStringExtra("threadId")
-        Log.i("THREADID:", "${threadId}")
-        val threadName = intent.getStringExtra("threadName")
-        Log.i("THREADNAME:", "${threadName}")
 
-        threadName?.let {
-            threadId?.let {
-                binding.threadName = threadName
+        threadId?.let {
+            val postAdapter = PostRecyclerViewAdapter()
+            binding.threadContainer.adapter = postAdapter
 
-                val postAdapter = PostRecyclerViewAdapter()
-                binding.threadContainer.adapter = postAdapter
-
-                threadsViewModel.fetchComents(threadId)
-                threadsViewModel.threadData.observe(this) { threadItems ->
-                    postAdapter.setThreads(threadItems)
-                }
+            threadsViewModel.fetchComents(threadId)
+            threadsViewModel.threadData.observe(this) { threadItems ->
+                postAdapter.setThreads(threadItems)
             }
         }
+
+        val bundle = Bundle()
+        bundle.putString("threadId", threadId)
+
+        var frag = PostFragment()
+        frag.arguments = bundle
+        supportFragmentManager.beginTransaction().add(R.id.fragContainer, frag).commit()
+
         //TODO Use the postId fetched from the last activity to load the data in case it changes (Realtime Database) (OPTIONAL)
     }
 }

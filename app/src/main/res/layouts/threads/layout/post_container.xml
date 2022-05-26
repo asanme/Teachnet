@@ -39,7 +39,7 @@
                 cardView:srcCompat="@drawable/bg_separator" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/sendCommentBtn"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:minHeight="100dp"
@@ -51,16 +51,29 @@
                 cardView:layout_constraintVertical_bias="1.0"
                 cardView:srcCompat="@drawable/ic_paper_plane_solid" />
 
-            <TextView
-                android:id="@+id/topicNameId"
+            <ImageView
+                android:id="@+id/pushBtn"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="@{threadId}"
+                android:minHeight="100dp"
+                cardView:layout_constraintBottom_toTopOf="@+id/h22213"
+                cardView:layout_constraintEnd_toStartOf="@+id/v122"
+                cardView:layout_constraintHorizontal_bias="1.0"
+                cardView:layout_constraintStart_toStartOf="@+id/v7"
+                cardView:layout_constraintTop_toTopOf="@+id/v124"
+                cardView:layout_constraintVertical_bias="1.0"
+                cardView:srcCompat="@drawable/ic_tick" />
+
+            <TextView
+                android:id="@+id/userIdContainer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@{userId}"
                 android:visibility="visible"
                 tools:visibility="visible" />
 
             <TextView
-                android:id="@+id/userNameContainer"
+                android:id="@+id/usernameContainer"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/open_sans"
@@ -69,14 +82,14 @@
                 android:textSize="18sp"
                 android:textStyle="italic"
                 cardView:layout_constraintBottom_toTopOf="@+id/h22213"
-                cardView:layout_constraintEnd_toStartOf="@+id/v3"
+                cardView:layout_constraintEnd_toStartOf="@+id/v6"
                 cardView:layout_constraintStart_toStartOf="@+id/v5"
                 cardView:layout_constraintTop_toTopOf="@+id/v124"
                 tools:text="Username" />
 
 
             <EditText
-                android:id="@+id/threadTitle"
+                android:text="@{threadTitle}"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
@@ -99,7 +112,8 @@
 
 
             <EditText
-                android:id="@+id/threadBodyContainer"
+                android:text="@{threadMessage}"
+                android:id="@+id/threadBody"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
@@ -319,7 +333,13 @@
 
     <data>
         <variable
-            name="threadId"
+            name="userId"
+            type="String" />
+        <variable
+            name="threadMessage"
+            type="String" />
+        <variable
+            name="threadTitle"
             type="String" />
     </data>
 </layout>

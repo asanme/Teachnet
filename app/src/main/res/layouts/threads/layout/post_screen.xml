@@ -8,14 +8,14 @@
         tools:context=".home.HomeActivity">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView2"
-            android:name="com.asanme.teachnet.fragments.PostFragment"
+            android:id="@+id/fragContainer"
+            android:name="com.asanme.teachnet.threads.PostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline25"
             app:layout_constraintEnd_toStartOf="@+id/guideline20"
             app:layout_constraintStart_toStartOf="@+id/guideline19"
-            app:layout_constraintTop_toTopOf="@+id/guideline17" />
+            app:layout_constraintTop_toTopOf="@+id/guideline23" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline17"
@@ -62,6 +62,20 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.97" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.005" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.46" />
+
         <TextView
             android:id="@+id/topicName"
             android:layout_width="0dp"
@@ -77,20 +91,6 @@
             app:layout_constraintStart_toStartOf="@+id/guideline19"
             app:layout_constraintTop_toTopOf="@+id/guideline23"
             tools:text="ThreadName" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.005" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.46" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/threadContainer"
