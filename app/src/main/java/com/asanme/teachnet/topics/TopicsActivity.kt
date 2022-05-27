@@ -37,8 +37,11 @@ class ForumActivity() : AppCompatActivity() {
         supportFragmentManager.beginTransaction().add(R.id.functionBarContainer, frag).commit()
 
         binding.createPostBtn.setOnClickListener {
-            startActivity(Intent(this, PostActivity::class.java))
+            val int = Intent(this, PostActivity::class.java)
+            int.putExtra("topicName", topicName)
+            startActivity(int)
         }
+
         //TODO Use the postId fetched from the last activity to load the data in case it changes (Realtime Database) (OPTIONAL)
     }
 

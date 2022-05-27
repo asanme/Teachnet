@@ -84,6 +84,8 @@
                 android:id="@+id/userIcon"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:minHeight="100dp"
+                android:maxHeight="100dp"
                 cardView:layout_constraintBottom_toTopOf="@+id/h2"
                 cardView:layout_constraintEnd_toStartOf="@+id/v5"
                 cardView:layout_constraintStart_toStartOf="@+id/v2"
@@ -103,7 +105,7 @@
                 cardView:layout_constraintEnd_toStartOf="@+id/v3"
                 cardView:layout_constraintStart_toStartOf="@+id/v7"
                 cardView:layout_constraintTop_toTopOf="@+id/h1"
-                tools:text="Username" />
+                android:text="@{username}" />
 
             <TextView
                 android:id="@+id/commentContainer"
@@ -125,7 +127,7 @@
                 tools:text="Comment" />
 
             <TextView
-                android:id="@+id/topicNameId"
+                android:id="@+id/userIdContainer"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:text="@{userId}"
@@ -136,6 +138,10 @@
     <data>
         <variable
             name="userId"
+            type="String" />
+
+        <variable
+            name="username"
             type="String" />
     </data>
 </layout>

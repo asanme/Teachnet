@@ -85,7 +85,7 @@
                 tools:text="Example Topic" />
 
             <TextView
-                android:id="@+id/topicNameId"
+                android:id="@+id/userId"
                 android:visibility="invisible"
                 android:text="@{topicId}"
                 android:layout_width="0dp"

@@ -20,6 +20,7 @@ class PostActivity : AppCompatActivity() {
         binding.postViewModel = threadsViewModel
 
         val threadId = intent.getStringExtra("threadId")
+        val topicName = intent.getStringExtra("topicName")
 
         threadId?.let {
             val postAdapter = PostRecyclerViewAdapter()
@@ -33,7 +34,7 @@ class PostActivity : AppCompatActivity() {
 
         val bundle = Bundle()
         bundle.putString("threadId", threadId)
-
+        bundle.putString("topicName", topicName)
         var frag = PostFragment()
         frag.arguments = bundle
         supportFragmentManager.beginTransaction().add(R.id.fragContainer, frag).commit()

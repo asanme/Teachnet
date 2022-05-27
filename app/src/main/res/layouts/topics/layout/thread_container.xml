@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         cardView:cardBackgroundColor="#F1F6FB"
         cardView:cardCornerRadius="10dp"
+        android:layout_marginBottom="10dp"
         cardView:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,9 +68,10 @@
 
             <ImageView
                 android:id="@+id/userIcon"
-                android:minHeight="100dp"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:minHeight="100dp"
+                android:maxHeight="100dp"
                 cardView:layout_constraintBottom_toTopOf="@+id/h2"
                 cardView:layout_constraintEnd_toStartOf="@+id/v5"
                 cardView:layout_constraintStart_toStartOf="@+id/v2"
@@ -89,7 +91,7 @@
                 cardView:layout_constraintEnd_toStartOf="@+id/v3"
                 cardView:layout_constraintStart_toStartOf="@+id/v5"
                 cardView:layout_constraintTop_toTopOf="@+id/h1"
-                tools:text="Username" />
+                tools:text="@{usernameOwner}" />
 
             <TextView
                 android:id="@+id/threadTitleContainer"
@@ -110,11 +112,13 @@
                 tools:text="Thread Title" />
 
             <TextView
+                android:maxHeight="0dp"
                 android:id="@+id/threadIdContainer"
                 android:visibility="invisible"
                 android:text="@{threadId}"
                 android:layout_width="0dp"
                 android:layout_height="0dp"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -122,6 +126,10 @@
     <data>
         <variable
             name="threadId"
+            type="String" />
+
+        <variable
+            name="usernameOwner"
             type="String" />
     </data>
 </layout>

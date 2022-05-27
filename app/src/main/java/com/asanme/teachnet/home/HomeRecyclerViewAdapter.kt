@@ -25,7 +25,7 @@ class HomeRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             //TODO Go to the desired forum
 
             val intent = Intent(it.context, ForumActivity::class.java)
-            intent.putExtra("topicId", holder.itemView.findViewById<TextView>(R.id.topicNameId).text)
+            intent.putExtra("topicId", holder.itemView.findViewById<TextView>(R.id.userId).text)
             intent.putExtra("topicName", holder.itemView.findViewById<TextView>(R.id.topicNameContainer).text)
             it.context.startActivity(intent)
         }

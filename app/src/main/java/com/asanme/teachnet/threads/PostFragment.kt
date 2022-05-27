@@ -36,8 +36,8 @@ class PostFragment: Fragment() {
         binding.lifecycleOwner = this
         firebaseAuth = FirebaseAuth.getInstance()
 
-        v = binding.root
 
+        v = binding.root
         val uid = firebaseAuth.uid
         uid?.let {
             arguments?.getString("threadId")?.let { threadId ->
@@ -56,10 +56,15 @@ class PostFragment: Fragment() {
                     Log.i("POSTFRAGMENT:: CREATING NEW POST SO NULL!", "SHEEEEEEEEEIT")
                     fetchProfile(uid)
                     binding.pushBtn.setOnClickListener {
-                        if(binding.threadTitleContainer.text.toString() != "" && binding.threadBody.text.toString() != ""){
-                            Toast.makeText(context, "You created a new post!", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(context, "Sugondeez!", Toast.LENGTH_SHORT).show()
+                        arguments?.getString("topicName")?.let { topicName ->
+                            if(binding.threadTitleContainer.text.toString() != "" && binding.threadBody.text.toString() != ""){
+                                Toast.makeText(context, "You created a new post!", Toast.LENGTH_SHORT).show()
+                                val key = dbThreadRef.push().key ?: ""
+                                val postInfo = ForumThread(key, uid, binding.threadTitleContainer.text.toString(), binding.threadBody.text.toString(), topicName)
+                                addPost(postInfo)
+                            } else {
+                                Toast.makeText(context, "Sugondeez!", Toast.LENGTH_SHORT).show()
+                            }
                         }
                     }
                 }
@@ -82,6 +87,8 @@ class PostFragment: Fragment() {
                 binding.threadTitle = threadListItems[0].threadTitle
                 binding.threadMessage =  threadListItems[0].threadMessage
 
+
+                fetchProfile(threadListItems[0].threadOwnerId)
                 if(!isOwner(threadListItems[0].threadOwnerId.toString(), currentUserId)){
                     binding.pushBtn.isEnabled = false
                     binding.pushBtn.isInvisible = true
@@ -95,6 +102,7 @@ class PostFragment: Fragment() {
     }
 
     fun fetchProfile(uid : String) {
+        Log.i("FETCHING PROFILE:: POSTFRAGMENT:: CHANGES", "LOADING PROFILE:: ")
         val query : Query =  dbProfileRef.orderByChild("uid").equalTo(uid)
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -102,15 +110,25 @@ class PostFragment: Fragment() {
                     dataSnapshot.getValue(User::class.java)!!
                 }
 
-                Log.i("POSTFRAGMENT:: CHANGES ", "SHEEEEEEEEEEEEESH ${threadListItems.toString()} ")
-                binding.username = threadListItems[0].username
-                Picasso.get().load(threadListItems[0].profilePictureUrl).into(binding.creatorIcon)
+                try {
+                    binding.username = threadListItems[0].username
+                    Picasso.get().load(threadListItems[0].profilePictureUrl).into(binding.creatorIcon)
+                } catch (exception : Exception){
+                    Toast.makeText(context, "An error occurred while fetching the profile", Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
         })
+    }
+
+
+    fun addPost(postInfo:ForumThread){
+        dbThreadRef.push().setValue(postInfo).addOnCompleteListener {
+            Toast.makeText(context, "Created post sucessfully!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun isOwner(ownerId:String, currentUserId: String): Boolean {

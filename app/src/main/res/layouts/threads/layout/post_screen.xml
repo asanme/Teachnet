@@ -76,22 +76,6 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.46" />
 
-        <TextView
-            android:id="@+id/topicName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans"
-            android:gravity="center"
-            android:text="@{threadName}"
-            android:textColor="#1C2D57"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/guideline17"
-            app:layout_constraintEnd_toStartOf="@+id/guideline20"
-            app:layout_constraintStart_toStartOf="@+id/guideline19"
-            app:layout_constraintTop_toTopOf="@+id/guideline23"
-            tools:text="ThreadName" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/threadContainer"
             android:layout_width="0dp"
@@ -106,10 +90,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <data>
-        <variable
-            name="threadName"
-            type="String" />
-
         <variable
             name="postViewModel"
             type="com.asanme.teachnet.threads.ThreadsViewModel" />
