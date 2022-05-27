@@ -42,7 +42,6 @@ class ProfileActivity : AppCompatActivity() {
 
         fetchProfile(firebaseUid, binding,this)
         binding.logoutBtn.setOnClickListener {
-            Toast.makeText(this, "Clicked?", Toast.LENGTH_SHORT).show()
             firebaseAuth.signOut()
             startActivity(Intent(this, WelcomeActivity::class.java))
         }
