@@ -93,19 +93,19 @@
                 tools:src="@drawable/ic_user" />
 
             <TextView
-                android:id="@+id/userNameContainer"
+                android:id="@+id/commentUserNameContainer"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:fontFamily="@font/open_sans"
                 android:gravity="center|left"
+                android:text="@{username}"
                 android:textColor="#2E3E5C"
                 android:textSize="18sp"
                 android:textStyle="italic"
                 cardView:layout_constraintBottom_toTopOf="@+id/h2"
                 cardView:layout_constraintEnd_toStartOf="@+id/v3"
                 cardView:layout_constraintStart_toStartOf="@+id/v7"
-                cardView:layout_constraintTop_toTopOf="@+id/h1"
-                android:text="@{username}" />
+                cardView:layout_constraintTop_toTopOf="@+id/h1" />
 
             <TextView
                 android:id="@+id/commentContainer"
@@ -130,6 +130,8 @@
                 android:id="@+id/userIdContainer"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:minHeight="0dp"
+                android:maxHeight="0dp"
                 android:text="@{userId}"
                 android:visibility="invisible" />
         </androidx.constraintlayout.widget.ConstraintLayout>

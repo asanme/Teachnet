@@ -79,7 +79,7 @@
                 tools:src="@drawable/ic_user" />
 
             <TextView
-                android:id="@+id/userNameContainer"
+                android:id="@+id/commentUserNameContainer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/open_sans"

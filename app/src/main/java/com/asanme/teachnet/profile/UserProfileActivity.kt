@@ -12,6 +12,7 @@ import com.asanme.teachnet.R
 import com.asanme.teachnet.auth.WelcomeActivity
 import com.asanme.teachnet.databinding.PostScreenBinding
 import com.asanme.teachnet.databinding.ProfileScreenBinding
+import com.asanme.teachnet.databinding.UserProfileScreenBinding
 import com.asanme.teachnet.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -22,29 +23,21 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
-class ProfileActivity : AppCompatActivity() {
+class UserProfileActivity : AppCompatActivity() {
     val db = Firebase.database("https://teachnet-asanme-default-rtdb.europe-west1.firebasedatabase.app/")
     val dbProfileRef = db.getReference("Users")
-    lateinit var firebaseAuth : FirebaseAuth
 
-    private lateinit var binding: ProfileScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding : ProfileScreenBinding = DataBindingUtil.setContentView(this, R.layout.profile_screen)
+        val binding : UserProfileScreenBinding = DataBindingUtil.setContentView(this, R.layout.user_profile_screen)
         binding.lifecycleOwner = this
 
-        firebaseAuth = FirebaseAuth.getInstance()
-        val firebaseUid = firebaseAuth.uid.toString()
+        val userId = intent.getStringExtra("userId").toString()
 
-        fetchProfile(firebaseUid, binding,this)
-        binding.logoutBtn.setOnClickListener {
-            Toast.makeText(this, "Clicked?", Toast.LENGTH_SHORT).show()
-            firebaseAuth.signOut()
-            startActivity(Intent(this, WelcomeActivity::class.java))
-        }
+        fetchProfile(userId, binding, this)
     }
 
-    fun fetchProfile(uid : String, binding:ProfileScreenBinding, context: Context) {
+    fun fetchProfile(uid : String, binding:UserProfileScreenBinding, context: Context) {
         val query : Query =  dbProfileRef.orderByChild("uid").equalTo(uid)
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

@@ -52,6 +52,10 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".profile.UserProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".auth.WelcomeActivity"
             android:exported="true"
             android:screenOrientation="portrait">

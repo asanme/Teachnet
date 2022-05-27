@@ -1,15 +1,19 @@
 package com.asanme.teachnet.threads
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.asanme.teachnet.R
 import com.asanme.teachnet.databinding.CommentContainerBinding
 import com.asanme.teachnet.model.CommentItem
 import com.asanme.teachnet.model.User
+import com.asanme.teachnet.profile.ProfileActivity
+import com.asanme.teachnet.profile.UserProfileActivity
+import com.asanme.teachnet.topics.ForumActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.Query
@@ -27,6 +31,13 @@ class PostRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as CommentItemViewHolder).onBind(commentItems[position])
+        holder.itemView.findViewById<TextView>(R.id.commentUserNameContainer).setOnClickListener {
+            val intent = Intent(it.context, UserProfileActivity::class.java)
+            intent.putExtra("userId", holder.itemView.findViewById<TextView>(R.id.userIdContainer).text.toString())
+            var idk = holder.itemView.findViewById<TextView>(R.id.userIdContainer).text.toString()
+            Log.i("LASTCCCCCCC", idk)
+            it.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -48,6 +59,7 @@ class PostRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val binding = CommentContainerBinding.bind(itemView)
         fun onBind(threadItem: CommentItem){
             binding.commentContainer.text = threadItem.threadMessage
+            binding.userId = threadItem.ownerId
             fetchProfile(threadItem.ownerId, binding)
             Log.i("USERID INFO FOR COMMENTS", threadItem.ownerId.toString())
         }
