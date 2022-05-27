@@ -11,6 +11,9 @@ import com.asanme.teachnet.databinding.ForumScreenBinding
 import com.asanme.teachnet.fragments.FunctionBarFragment
 import com.asanme.teachnet.threads.PostActivity
 
+/**
+ * This class represents the topic section
+ */
 class ForumActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +24,6 @@ class ForumActivity() : AppCompatActivity() {
 
         val topicName = intent.getStringExtra("topicName")
         val topicId = intent.getStringExtra("topicId")
-        Log.i("TOPICID:", "${topicId}")
-        Log.i("TOPICNAME:", "${topicName}")
 
         binding.setTopicName(topicName)
         val threadAdapter = ThreadRecyclerViewAdapter()
@@ -41,9 +42,5 @@ class ForumActivity() : AppCompatActivity() {
             int.putExtra("topicName", topicName)
             startActivity(int)
         }
-
-        //TODO Use the postId fetched from the last activity to load the data in case it changes (Realtime Database) (OPTIONAL)
     }
-
-    //TODO ADD functionality to create a new Thread
 }

@@ -13,8 +13,11 @@ import com.asanme.teachnet.notifications.NotificationsActivity
 import com.asanme.teachnet.profile.ProfileActivity
 import com.asanme.teachnet.search.SearchActivity
 
+/**
+ * This class represents a fragment for the bottom function bar present in almost all views.
+ * We set onClickListeners in every button, those buttons will take the user to the desired view
+ */
 class FunctionBarFragment : Fragment() {
-    lateinit var mView: View
     lateinit var binding : FunctionBarBinding
     //TODO Add logic so that the function bar changes the button color depending on the screen
     override fun onCreateView(

@@ -24,7 +24,11 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
-
+/**
+ * This class represents the Upper body of the thread, part which contains the user profile picture,
+ * username, thread title and thread body.
+ * This class is also used to create new posts, add new comments and loading the profile of the thread owner
+ */
 class PostFragment: Fragment() {
     lateinit var v: View
     lateinit var firebaseAuth : FirebaseAuth
@@ -34,6 +38,7 @@ class PostFragment: Fragment() {
     val dbCommentsRef = db.getReference("Comments")
     val dbProfileRef = db.getReference("Users")
     var threadIdCheck = ""
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.post_container, container, false)
 

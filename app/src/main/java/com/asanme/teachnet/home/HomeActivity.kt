@@ -8,6 +8,10 @@ import com.asanme.teachnet.R
 import com.asanme.teachnet.databinding.HomeScreenBinding
 import com.asanme.teachnet.fragments.FunctionBarFragment
 
+/**
+ * This activity represents the main activity for the Home screen.
+ * This class also controls the view, by adding a RecyclerView and fetching the items from Firebase Realtime Database
+ */
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

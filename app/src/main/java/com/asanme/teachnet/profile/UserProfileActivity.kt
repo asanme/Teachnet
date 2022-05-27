@@ -23,6 +23,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
+/**
+ * This class represents a User Profile view, which loads the information based on the clicked user, which is communicated directly with the PostRecyclerViewAdapter
+ */
 class UserProfileActivity : AppCompatActivity() {
     val db = Firebase.database("https://teachnet-asanme-default-rtdb.europe-west1.firebasedatabase.app/")
     val dbProfileRef = db.getReference("Users")

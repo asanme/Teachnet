@@ -1,7 +1,7 @@
 package com.asanme.teachnet.model
 
 /**
- * User parameters
+ * Represents a user
  */
 data class User(
     var email: String = "",

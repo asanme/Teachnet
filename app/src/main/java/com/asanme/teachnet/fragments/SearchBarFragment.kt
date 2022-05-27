@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.asanme.teachnet.R
 
+/**
+ * This fragment represents the search bar present in the home screen
+ * Not functional yet.
+ */
 class SeachBarFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,

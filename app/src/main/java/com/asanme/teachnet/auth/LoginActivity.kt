@@ -8,6 +8,9 @@ import com.asanme.teachnet.home.HomeActivity
 import com.asanme.teachnet.databinding.LoginScreenBinding
 import com.google.firebase.auth.FirebaseAuth
 
+/**
+ * This class uses FirebaseAuth to authenticate the user and give access to the app
+ */
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: LoginScreenBinding
     private lateinit var connection: FirebaseAuth

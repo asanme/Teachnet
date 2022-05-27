@@ -12,6 +12,9 @@ import com.asanme.teachnet.topics.ForumActivity
 import com.asanme.teachnet.model.TopicItem
 import com.squareup.picasso.Picasso
 
+/**
+ * This class is responsible for updating the topics in realtime and also adding new ones to the RecyclerView in the topic_container.xml file.
+ */
 class HomeRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val topicItems = mutableListOf<TopicItem>()
 
@@ -22,8 +25,6 @@ class HomeRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as TopicItemViewHolder).onBind(topicItems[position])
         holder.itemView.setOnClickListener {
-            //TODO Go to the desired forum
-
             val intent = Intent(it.context, ForumActivity::class.java)
             intent.putExtra("topicId", holder.itemView.findViewById<TextView>(R.id.userId).text)
             intent.putExtra("topicName", holder.itemView.findViewById<TextView>(R.id.topicNameContainer).text)

@@ -9,6 +9,11 @@ import com.asanme.teachnet.R
 import com.asanme.teachnet.databinding.PostScreenBinding
 import com.asanme.teachnet.fragments.FunctionBarFragment
 
+
+/**
+ * This activity represents the main activity for the Thread screen.
+ * This class also controls the view, by adding a RecyclerView and fetching the items from Firebase Realtime Database
+ */
 class PostActivity : AppCompatActivity() {
     lateinit var threadId: String
 

@@ -5,6 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.asanme.teachnet.model.TopicItem
 
+/**
+ * View Model that communicates the HomeActivity with the HomeController
+ */
 class HomeViewModel: ViewModel() {
     private val repository = HomeController()
 

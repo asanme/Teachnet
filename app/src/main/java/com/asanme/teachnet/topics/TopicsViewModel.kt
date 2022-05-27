@@ -5,6 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.asanme.teachnet.model.ForumThread
 
+/**
+ * View Model that communicates the ForumActivity with the TopicsController
+ */
 class ThreadViewModel: ViewModel() {
     private val repository = TopicsController()
 

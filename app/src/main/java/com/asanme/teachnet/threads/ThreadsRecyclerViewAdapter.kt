@@ -22,6 +22,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
+/**
+ * This class is responsible for updating the topics in realtime and also adding new ones to the RecyclerView in the post_container.xml file.
+ */
 class PostRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val commentItems = mutableListOf<CommentItem>()
 

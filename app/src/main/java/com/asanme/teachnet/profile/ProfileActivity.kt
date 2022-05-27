@@ -22,6 +22,10 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
+/**
+ * This class represents the Profile view, which loads the information based on the current user logged in,
+ * thanks to FirebaseAuth, which can return an item containing the current ID of the user
+ */
 class ProfileActivity : AppCompatActivity() {
     val db = Firebase.database("https://teachnet-asanme-default-rtdb.europe-west1.firebasedatabase.app/")
     val dbProfileRef = db.getReference("Users")

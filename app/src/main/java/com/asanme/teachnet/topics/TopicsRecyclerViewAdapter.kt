@@ -21,6 +21,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
+/**
+ * This class is responsible for updating the topics in realtime and also adding new ones to the RecyclerView in the topic_container.xml file.
+ */
 class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val threadItems = mutableListOf<ForumThread>()
 
@@ -30,7 +33,6 @@ class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as ThreadItemViewHolder).onBind(threadItems[position])
-        Log.i("THREAD INFORMATION", "OPENING POSTACTIVITY")
         holder.itemView.setOnClickListener {
             val intent = Intent(it.context, PostActivity::class.java)
             intent.putExtra("threadId", holder.itemView.findViewById<TextView>(R.id.threadIdContainer).text)
@@ -62,7 +64,6 @@ class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
         }
 
         fun fetchProfile(uid : String, binding: ThreadContainerBinding) {
-            Log.i("FETCHING PROFILE:: POSTFRAGMENT:: CHANGES", "LOADING PROFILE:: ")
             val query : Query =  dbProfileRef.orderByChild("uid").equalTo(uid)
             query.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -74,7 +75,6 @@ class ThreadRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
                         binding.usernameOwner = threadListItems[0].username
                         Picasso.get().load(threadListItems[0].profilePictureUrl).into(binding.userIcon)
                     } catch (exception : Exception){
-                        Log.e("FETCHING PROFILE COMMENT","ERROR LOADING COMMENT")
                     }
                 }
 
